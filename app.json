@@ -2,12 +2,51 @@
   "pages":[
     "pages/home/home",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/order/order",
+    "pages/chat/chat",
+    "pages/my/my"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "松果团",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "selectedColor":"blue",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "主页",
+        "iconPath": "image/home1.png",
+        "selectedIconPath": "image/home2.png"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "订单",
+        "iconPath": "image/order1.png",
+        "selectedIconPath": "image/order2.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "发布",
+        "iconPath": "image/add.png",
+        "selectedIconPath": "image/cycle.png"
+      },
+      {
+        "pagePath": "pages/chat/chat",
+        "text": "聊天",
+        "iconPath": "image/chat1.png",
+        "selectedIconPath": "image/chat2.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "image/my1.png",
+        "selectedIconPath": "image/my2.png"
+      }
+    ]
   }
 }
