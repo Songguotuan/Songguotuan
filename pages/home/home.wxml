@@ -1,1 +1,9 @@
 <!--pages/home/home.wxml-->
+
+<swiper indicator-dots="{{indicatorDots}}" indicator-active-color='#2dcb70' autoplay='true'  duration="{{duration}}">  
+  <view wx:for-items="{{imgUrls}}">  
+    <swiper-item>
+      <image src="{{item}}" class="slide-image"/>  
+    </swiper-item>  
+  </view>
+</swiper>  
