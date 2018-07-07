@@ -1,9 +1,35 @@
 <!--pages/home/home.wxml-->
-
-<swiper indicator-dots="{{indicatorDots}}" indicator-active-color='#2dcb70' autoplay='true'  duration="{{duration}}">  
-  <view wx:for-items="{{imgUrls}}">  
-    <swiper-item>
-      <image src="{{item}}" class="slide-image"/>  
-    </swiper-item>  
+<view class='all'>
+<!-- 头部 -->
+  <view class='head'>
+  <!-- 轮播图 -->
+    <swiper indicator-dots="{{indicatorDots}}" indicator-active-color='white' autoplay='true'  duration="{{duration}}">  
+      <view wx:for-items="{{imgUrls}}">  
+        <swiper-item>
+          <image src="{{item}}" class="slide-image"/>  
+        </swiper-item>  
+      </view>
+    </swiper>  
   </view>
-</swiper>  
+  
+<!-- 内容 -->
+  <view class='body'>
+    <view class='body_inner'>
+      <view class='mode'>
+        <view class='mode_a'>代取快递</view>
+        <view class='mode_b'>选择商家</view>
+      </view>
+
+      <view class='position'>
+        <view class='position_a'>取件</view>
+        <view class='position_b iconfont icon-weibiaoti40'></view>
+        <view class='position_c'>收件</view>
+      </view>
+
+      <view class='content'>
+        <view></view>
+      </view>
+
+    </view>
+  </view>
+</view>
