@@ -6,12 +6,12 @@
     <swiper indicator-dots="{{indicatorDots}}" indicator-active-color='white' autoplay='true'  duration="{{duration}}">  
       <view wx:for-items="{{imgUrls}}">  
         <swiper-item>
-          <image src="{{item}}" class="slide-image"/>  
+          <image src="{{item}}" class="slide-image"/>
         </swiper-item>  
       </view>
-    </swiper>  
+    </swiper>
   </view>
-  
+
 <!-- 内容 -->
   <view class='body'>
     <view class='body_inner'>
@@ -19,17 +19,54 @@
         <view class='mode_a'>代取快递</view>
         <view class='mode_b'>选择商家</view>
       </view>
-
       <view class='position'>
-        <view class='position_a'>取件</view>
+        <view class='position_a'>
+          快递点
+          <i class='iconfont icon-xiala'></i>        
+        </view>
         <view class='position_b iconfont icon-weibiaoti40'></view>
-        <view class='position_c'>收件</view>
+        <view class='position_c'>
+          收件点
+          <i class='iconfont icon-xiala'></i>        
+        </view>
       </view>
-
-      <view class='content'>
-        <view></view>
+    </view>
+    <view class='gap'>
+    
+    </view>
+    <view class='content'>
+      <view class='info'>
+        <view class='info_left'>
+          <view class='info_left_a'>
+              <image class='info_avatar'                                       src='https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83eodtSkTficbZW9gwIejicythCmRUcgACCLg2PiaFPDrl2aTqWy27Kq5gFxwfs63TW4WNIwDiaH5plgY4g/0'>
+              </image>
+          </view>
+          <view class='info_left_b'>
+            <view class='info_name'>
+              杨小鸣
+            </view>
+          </view>
+        </view>
+        <view class='info_right'>
+          <view class='info_right_a'>
+            <lable>类型： </lable>
+            <lable>小件 </lable>
+            <lable>2元</lable>
+            <i class='icont_time iconfont icon-shijianzhongbiao'></i> 
+            <label class='time_time'>7/12/14:05</label>
+          </view>
+          <view class='info_right_a'>
+            <lable>地址：</lable>
+            <lable>软件园4号楼</lable>
+          </view>
+          <view class='info_right_a'>
+            <lable>时间：</lable>
+            <lable>7/12/16:40</lable>
+            <button class='get_list'>接单</button>
+          </view>
+        </view>
       </view>
-
+      
     </view>
   </view>
 </view>
