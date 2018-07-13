@@ -1,0 +1,10 @@
+/* pages/login/login.wxss */
+.bg_img{
+  height: 800rpx;
+  width: 800rpx;
+  position: absolute;
+  z-index: 0;
+  top: 380rpx;
+  left: 173rpx;
+  opacity:0.4;
+}

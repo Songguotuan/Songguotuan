@@ -1,0 +1,7 @@
+<!--pages/login/login.wxml-->
+<image src='../../image/sz.png' class='bg_img'></image>
+<view class=''>
+  <view></view>
+  <view></view>
+</view>
+
