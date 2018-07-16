@@ -1,5 +1,5 @@
 <!--pages/home/home.wxml-->
-<view class='all'>
+<view class='page'>
 <!-- 头部 -->
   <view class='head'>
   <!-- 轮播图 -->
@@ -38,7 +38,7 @@
       <view class='info'>
         <view class='info_left'>
           <view class='info_left_a'>
-              <image class='info_avatar'                                       src='https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83eodtSkTficbZW9gwIejicythCmRUcgACCLg2PiaFPDrl2aTqWy27Kq5gFxwfs63TW4WNIwDiaH5plgY4g/0'>
+              <image class='info_avatar'                                       src='https://wx.qlogo.cn/mmopen/vi_32/auOMOVSZKkTWcxn1S6ic25wBiaibEZqa3yLwe20ibhf7onUqfWYl1jicEOOrDx6H3iaNJUMasX0ric5Jef5jGoP0sIuMg/132'>
               </image>
           </view>
           <view class='info_left_b'>

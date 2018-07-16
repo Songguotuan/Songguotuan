@@ -2,7 +2,7 @@
 .wxml, body {
   padding: 0;
 }
- .all {
+ .page {
   position: absolute;
   height: 100%;
   width: 750rpx;

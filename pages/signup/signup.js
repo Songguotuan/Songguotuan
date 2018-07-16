@@ -1,4 +1,4 @@
-// pages/login/login.js
+// pages/signup/signup.js
 const app = getApp()
 
 var phonenumber
@@ -84,8 +84,8 @@ Page({
         image: '/image/phone.png',
         duration: 2000
       })
-
     }
+
   },
 
   //获取输入的验证码
@@ -200,8 +200,8 @@ Page({
       success: res => {
         session_now = res.data
       }
-    })            
-     //变量赋值之后不能马上使用，要间隔一会儿再用
+    })
+    //变量赋值之后不能马上使用，要间隔一会儿再用
 
 
 
@@ -233,7 +233,7 @@ Page({
     }
   },
   getUserInfo: function (e) {
-    console.log(e)
+    console.log(e);
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
