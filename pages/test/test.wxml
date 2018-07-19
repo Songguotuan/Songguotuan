@@ -1,0 +1,90 @@
+<!--pages/test/test.wxml-->
+<!--   Bar   -->
+ <view class='bar'>
+ <!-- 主页 -->
+  <view class='bar_inner' bindtap='the_home'  style="color:{{homeColor}}">
+    <view><i class='bar_icon iconfont icon-shouye'/></view>
+    <text class='bar_inner_font' style=''>主页</text>
+  </view>
+<!-- 订单 -->
+  <view class='bar_inner' bindtap='the_order' style='color:{{orderColor}}'>
+    <view><text class='bar_icon iconfont icon-dingdan'/></view>
+    <text class='bar_inner_font_b_b' style=''>订单</text>
+  </view>
+<!-- 发布 -->
+  <view class='bar_inner'>
+    <view class='' bindtap=''>
+      <view class='icon-mid' bindtap='mid_start'>
+        <view class='iconfont icon-yuan' id='icon-mid-inner'>
+          <view class='bar_icon iconfont icon-plus-add' id='icon-mid-add' >
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+<!-- 聊天 -->
+  <view class='bar_inner' bindtap='the_chat' style='color:{{chatColor}}'>
+    <view><text class='bar_icon iconfont icon-xiaoxi'/></view>
+    <text class='bar_inner_font' style=''>聊天</text>
+  </view>
+<!-- 我 -->
+  <view class='bar_inner' bindtap='the_my' style='color:{{myColor}}'>
+    <view>
+      <text class='bar_icon iconfont icon-wode'/>
+    </view>
+    <text class='bar_inner_font_b' style=''>我</text>
+  </view>
+</view> 
+<!-- <button bindtap='mid_start'>动画</button> -->
+
+<view class='bar_a'>
+<!-- 顺风代取 -->
+  <view class=''>
+    <view class='iconfont icon-yuan' id='icon-mid-inner_a' bindtap='bar_per' animation="{{animation_bar_a}}">
+      <view class='bar_icon_a iconfont icon-benpao' id='icon-mid-add_a'>
+        <view class='bar_a_font'>顺风代取</view>
+      </view>
+    </view>
+  </view> 
+<!-- 专业代取 -->
+  <view class=''>
+    <view class='iconfont icon-yuan' id='icon-mid-inner_b' bindtap='bar_car' animation="{{animation_bar_b}}">
+      <view class='bar_icon_a iconfont icon-cheliangziliao' id='icon-mid-add_b'>
+        <view class='bar_a_font_b'>专业代取</view>
+      </view>
+    </view>
+  </view> 
+</view>
+<!--   /Bar    -->
+
+<view class='to_cover' style="display:{{to_cover}}" bindtouchstart='to_cover_over'>
+</view>
+
+
+
+
+<view class='the_body'>
+  <view style='font-size:200rpx;'>
+  <text>w</text>
+  </view>
+  <view style='font-size:200rpx;'>
+  <text>w</text>
+  </view><view style='font-size:200rpx;'>
+  <text>w</text>
+  </view><view style='font-size:200rpx;'>
+  <text>w</text>
+  </view><view style='font-size:200rpx;'>
+  <text>w</text>
+  </view><view style='font-size:200rpx;'>
+  <text>w</text>
+  </view><view style='font-size:200rpx;'>
+  <text>w</text>
+  </view>
+</view>
+
+
+
+
+
+
+

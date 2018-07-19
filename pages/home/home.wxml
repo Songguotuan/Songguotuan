@@ -2,39 +2,61 @@
 <view class='page'>
 <!-- 头部 -->
   <view class='head'>
-  <!-- 轮播图 -->
+<!-- 轮播图 -->
     <swiper indicator-dots="{{indicatorDots}}" indicator-active-color='white' autoplay='true'  duration="{{duration}}">  
-      <view wx:for-items="{{imgUrls}}">  
+      <view wx:for-items="{{imgUrls}}" >  
         <swiper-item>
           <image src="{{item}}" class="slide-image"/>
         </swiper-item>  
       </view>
     </swiper>
   </view>
-
 <!-- 内容 -->
   <view class='body'>
+    <!-- 选择栏目 -->
     <view class='body_inner'>
       <view class='mode'>
-        <view class='mode_a'>代取快递</view>
-        <view class='mode_b'>选择商家</view>
-      </view>
-      <view class='position'>
-        <view class='position_a'>
-          快递点
-          <i class='iconfont icon-xiala'></i>        
-        </view>
-        <view class='position_b iconfont icon-weibiaoti40'></view>
-        <view class='position_c'>
-          收件点
-          <i class='iconfont icon-xiala'></i>        
-        </view>
+        <view class='mode_a' bindtap='mode_per_tap' style='background-color:{{mode_per_bgcolor}}'>顺风代取</view>
+        <view class='mode_b' bindtap='mode_car_tap' style='background-color:{{mode_car_bgcolor}}'>专业代取</view>
       </view>
     </view>
+    <!-- 筛选栏目 -->
+    <!-- 顺风代取模块 -->
+    <view class='position' style='display:{{display_per_a}}'>
+      <view class='position_a'>
+        快递公司
+      <i class='iconfont icon-xiala'></i>        
+      </view>
+      <view class='position_b'>
+        收件点
+        <i class='iconfont icon-xiala'></i>        
+      </view>
+      <view class='position_c'>
+        价格
+        <i class='iconfont icon-xiala'></i>        
+      </view>
+    </view>
+    <!-- 专业代取模块 -->
+     <view class='position' style='display:{{display_car_a}}'>
+      <view class='position_a'>
+        综合排名
+        <i class='iconfont icon-xiala'></i>        
+      </view>
+      <view class='position_b'>
+        好评率
+        <i class='iconfont icon-xiala'></i>        
+      </view>
+      <view class='position_c'>
+        订单数
+        <i class='iconfont icon-xiala'></i>        
+      </view>
+    </view> 
+    <!-- 挡板块 -->
     <view class='gap'>
-    
     </view>
-    <view class='content'>
+    <!-- 内容 -->
+    <!-- 顺风代取模块 -->    
+    <view class='content' style='display:{{display_per_b}}'>
       <view class='info'>
         <view class='info_left'>
           <view class='info_left_a'>
@@ -49,7 +71,7 @@
         </view>
         <view class='info_right'>
           <view class='info_right_a'>
-            <lable>类型： </lable>
+            <lable>类型：</lable>
             <lable>小件 </lable>
             <lable>2元</lable>
             <i class='icont_time iconfont icon-shijianzhongbiao'></i> 
@@ -66,7 +88,12 @@
           </view>
         </view>
       </view>
-      
     </view>
+    <!-- 专业代取模块 -->
+    <view class='content' style='display:{{display_car_b}}'>
+      111
+    </view> 
   </view>
 </view>
+
+

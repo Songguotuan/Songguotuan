@@ -101,7 +101,6 @@ Page({
 
 
     if (code && phonenumber) {
-
       console.log(hasUserInfo)
       if (hasUserInfo) {
 
@@ -122,10 +121,6 @@ Page({
           },
           success: function (result) {
             if (result.data.result == 'success') {
-              wx.showToast({
-                title: '成功',
-                duration: 3000
-              })
               wx.setStorage({
                 key: 'user_wxnickname',
                 data: wxuser_nickName,
@@ -133,6 +128,14 @@ Page({
               wx.setStorage({
                 key: 'user_wxavatarurl',
                 data: wxuser_avatarUrl,
+              })
+              wx.showToast({
+                title: '登录成功',
+                duration: 3000,
+                icon: 'false',
+              });
+              wx.reLaunch({
+                url: '../home/home'
               })
             } else {
               console.log(result.data.msg)
@@ -197,8 +200,9 @@ Page({
 
     wx.getStorage({
       key: 'user_session',
-      success: res => {
-        session_now = res.data
+       success: function (res) {
+        console.log(res.data);
+        session_now = res.data;
       }
     })
     //变量赋值之后不能马上使用，要间隔一会儿再用

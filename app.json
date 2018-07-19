@@ -1,8 +1,9 @@
 {
   "pages":[
+    "pages/test/test",
+    "pages/home/home",    
     "pages/signup/signup",    
     "pages/logs/logs",
-    "pages/home/home",
     "pages/order/order",
     "pages/chat/chat",
     "pages/my/my"
@@ -12,42 +13,5 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "松果团",
     "navigationBarTextStyle":"black"
-  },
-  "tabBar": {
-    "color": "#a9b7b7",
-    "selectedColor": "#a686ba",
-    "borderStyle": "white",
-    "list": [
-      {
-        "iconPath": "image/home.png",
-        "selectedIconPath": "image/home2.png",
-        "pagePath": "pages/home/home",
-        "text": "主页"
-      },
-      {
-        "iconPath": "image/order.png",
-        "selectedIconPath": "image/order2.png",
-        "pagePath": "pages/order/order",
-        "text": "订单"
-      },
-      {
-        "iconPath": "image/add.png",
-        "selectedIconPath": "image/add.png",
-        "pagePath": "pages/order/order",
-        "text": "发布"
-      },
-      {
-        "iconPath": "image/chat.png",
-        "selectedIconPath": "image/chat.png",
-        "pagePath": "pages/chat/chat",
-        "text": "聊天"
-      },
-      {
-        "iconPath": "image/my.png",
-        "selectedIconPath": "image/my2.png",
-        "pagePath": "pages/my/my",
-        "text": "我的"
-      }
-    ]
   }
 }

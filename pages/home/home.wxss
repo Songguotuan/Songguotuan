@@ -4,7 +4,8 @@
 }
  .page {
   position: absolute;
-  height: 100%;
+  /* 注意注意咯、，这我改了下 */
+  /* height: 100%; */
   width: 750rpx;
   background-color: #f5f5f5
 }
@@ -30,46 +31,45 @@
   position: relative;
   float: left;
   width: 50%;
-  background-color: #FFF500;
 }
 .mode_b{  
   border-top-right-radius: 15rpx;  
   position: relative;
   float: right;
   width: 50%;
-  background-color: #E9E7E7; 
 }
 .position{
   width: 100%;
-  /* font-size: 2rpx; */
+   font-size: 30rpx; 
   /* height: 10rpx; */
 }
 .position_a{
+  padding-top: 10rpx;
+  padding-left: 50rpx;
   background-color: #f9f7f7; 
-  width: 40%;
   float: left;
   position: relative;
 }
 .position_b{
+   padding-top: 10rpx;
+  padding-left: 125rpx;
   background-color: #f9f7f7; 
-  width: 20%;
   float: left;
   position: relative;
-  font-size: 46rpx;
 }
 .position_c{
+  padding-top: 10rpx;
+  padding-left: 130rpx;
   background-color: #f9f7f7; 
-  width: 40%;
-  float: right;
+  float: left;
   position: relative;
 }
 .info{
   width: 100%;
   padding: 25rpx;
-   background-color: white;
-   height: 240rpx; 
-   border-top: 5px solid #f5f5f5;
-  
+  background-color: white;
+  height: 240rpx; 
+  border-top: 5px solid #f5f5f5;
 }
 .info_left{
   width: 20%;
@@ -113,7 +113,7 @@
   font-size: 30rpx;
   padding:12rpx 65rpx 12rpx 65rpx;
   margin-left: 45rpx;
-  background-color: yellow;
+  background-color: #f6b26b;
   position: relative;
   top: 10rpx;
 }
@@ -133,3 +133,13 @@
   font-size: 28rpx;
   color: #8b8b8b;
 }
+
+
+
+
+
+
+
+
+
+

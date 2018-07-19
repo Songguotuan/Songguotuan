@@ -1,4 +1,6 @@
 // pages/home/home.js
+const app = getApp();
+const that = this;
 Page({
 
   /**
@@ -17,7 +19,13 @@ Page({
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
-    duration: 1000
+    duration: 1000,
+    display_per_a: 'block',
+    display_per_b: 'block',
+    display_car_a: 'none',
+    display_car_b: 'none',
+    mode_per_bgcolor: '#f6b26b',
+    mode_car_bgcolor: '#E9E7E7'
   },
   changeIndicatorDots: function (e) {
     this.setData({
@@ -29,7 +37,27 @@ Page({
       duration: e.detail.value
     })
   },
-
+  // 点击顺风代取，出现per隐藏car
+  mode_per_tap: function(){
+    this.setData({
+      display_per_a: 'block',
+      display_per_b: 'block',
+      display_car_a: 'none',
+      display_car_b: 'none',
+      mode_per_bgcolor: '#f6b26b',
+      mode_car_bgcolor: '#E9E7E7'
+    })
+  },
+  mode_car_tap: function(){
+    this.setData({
+      display_per_a: 'none',
+      display_per_b: 'none',
+      display_car_a: 'block',
+      display_car_b: 'block',
+      mode_per_bgcolor: '#E9E7E7',
+      mode_car_bgcolor: '#f6b26b'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -41,14 +69,12 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
   },
 
   /**
