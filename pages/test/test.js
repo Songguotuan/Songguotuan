@@ -61,6 +61,7 @@ Page({
 
 // 基于函数节流的按钮动画控制函数，降低bug率
   mid_start: util.throttle(function () {
+    const that = this;
     if (animation_bar_btn == 0) {
       // 人代取出现
       this.animation.translate(-115, -140).step(),
@@ -75,7 +76,6 @@ Page({
         animation_bar_b: this.animation.export()
       })
       //遮罩出现
-      const that = this;      
       setTimeout(function () {
         that.setData({
           to_cover: 'block'
@@ -106,7 +106,7 @@ Page({
     }
   }, 600),
   //点击覆盖层任意位置，回收按钮
-
+  
   to_cover_over: function () {
     // 人代取消失
     this.animation.translate(-115, -140).step(),
