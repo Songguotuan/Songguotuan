@@ -3,7 +3,7 @@
 <!-- 头部 -->
   <view class='head'>
 <!-- 轮播图 -->
-    <swiper indicator-dots="{{indicatorDots}}" indicator-active-color='white' autoplay='true'  duration="{{duration}}">  
+    <swiper indicator-dots="{{indicatorDots}}" indicator-active-color='white' autoplay='true'  duration="{{duration}}">
       <view wx:for-items="{{imgUrls}}" >  
         <swiper-item>
           <image src="{{item}}" class="slide-image"/>
