@@ -5,14 +5,15 @@
     <view class='logo_name'>学校</view>
     <view class='inner_a'>
       <view class="inner_a_a" bindtap='pull_city'>
-        选择省份： {{option_city}}
+        <!-- 选择省份： {{option_city}} -->
+        选择省份： 天津
         <i class='iconfont icon-xiala1 the_xiala'></i>
       </view>
       <view class="inner_a_b" bindtap='pull_school'>
         选择学校： {{option_school}}
         <i class='iconfont icon-xiala1 the_xiala'></i>
       </view>
-      <view class="inner_a_c" bindtap=''>
+      <view class="inner_a_c">
         <i class='the_xiala'>仅展示已开通学校</i>
       </view>
     </view>

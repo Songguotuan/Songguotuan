@@ -24,10 +24,10 @@
     <!-- 顺风代取模块 -->
     <view class='position' style='display:{{display_per}}' >
       <view class='position_b'>
-       <view bindtap='accept_ads'>
+        <view bindtap='accept_ads'>
           收件点
-        <i class='iconfont icon-xiala'></i>
-    </view>
+          <i class='iconfont icon-xiala'></i>
+        </view>
       </view>
       <view class='position_c_a'>
         <view bindtap='pull_price'>

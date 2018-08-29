@@ -4,7 +4,7 @@
   width: 800rpx;
   position: absolute;
   z-index: 0;
-  top: 380rpx;
+  top: 410rpx;
   left: 173rpx;
   opacity:0.4;
 }
@@ -40,7 +40,8 @@
 }
 .inner_a_b{
   font-size: 36rpx;
-  padding-top: 50rpx;
+  margin-top: 50rpx;
+  z-index: 1;
 }
 .inner_a_c{
   padding-top: 20rpx;
