@@ -22,78 +22,100 @@
     </view>
     <!-- 筛选栏目 -->
     <!-- 顺风代取模块 -->
-    <view class='position' style='display:{{display_per_a}}'>
-      <view class='position_a'>
-        快递公司
-      <i class='iconfont icon-xiala'></i>        
-      </view>
+    <view class='position' style='display:{{display_per}}' >
       <view class='position_b'>
-        收件点
-        <i class='iconfont icon-xiala'></i>        
+       <view bindtap='accept_ads'>
+          收件点
+        <i class='iconfont icon-xiala'></i>
+    </view>
       </view>
-      <view class='position_c'>
-        价格
-        <i class='iconfont icon-xiala'></i>        
+      <view class='position_c_a'>
+        <view bindtap='pull_price'>
+          价格
+          <i class='iconfont icon-xiala'></i>    
+        </view> 
       </view>
     </view>
+     
     <!-- 专业代取模块 -->
-     <view class='position' style='display:{{display_car_a}}'>
+     <view class='position' style='display:{{display_car}}'>
       <view class='position_a'>
-        综合排名
-        <i class='iconfont icon-xiala'></i>        
+        <view>
+          综合排名
+          <i class='iconfont icon-xiala'></i> 
+        </view>       
       </view>
       <view class='position_b'>
-        好评率
-        <i class='iconfont icon-xiala'></i>        
+        <view>
+          好评率
+          <i class='iconfont icon-xiala'></i>
+        </view>        
       </view>
       <view class='position_c'>
-        订单数
-        <i class='iconfont icon-xiala'></i>        
+        <view>
+          订单数
+          <i class='iconfont icon-xiala'></i>
+        </view>
       </view>
     </view> 
     <!-- 挡板块 -->
     <view class='gap'>
     </view>
+    <!-- 下拉菜单内容 -->
+    <view class="the_pull {{open ? 'get_open' : ''}} ">
+      <view class='pull_inner'>
+        <view>全部</view>
+      </view>
+      <block wx:for="{{pull_inner_data}}" wx:for-item="data" wx:key="{{index}}">
+        <view class='pull_inner'>
+          <view>{{data.msg}}</view>
+        </view>
+      </block>
+    </view>
     <!-- 内容 -->
     <!-- 顺风代取模块 -->    
-    <view class='content' style='display:{{display_per_b}}'>
-      <view class='info'>
-        <view class='info_left'>
-          <view class='info_left_a'>
-              <image class='info_avatar'                                       src='https://wx.qlogo.cn/mmopen/vi_32/auOMOVSZKkTWcxn1S6ic25wBiaibEZqa3yLwe20ibhf7onUqfWYl1jicEOOrDx6H3iaNJUMasX0ric5Jef5jGoP0sIuMg/132'>
-              </image>
+
+    <view class='content' style='display:{{display_per}}'>
+      <block wx:for="{{order_data}}" wx:for-item="order" wx:key="{{index}}">
+        <view class='info'>
+          <view class='info_left'>
+            <view class='info_left_a'>
+                <image class='info_avatar' src='{{order.prop_wxavatarurl}}'>
+                </image>
+            </view>
+            <view class='info_left_b'>
+              <view class='info_name'>
+                {{order.prop_wxnickname}}
+              </view>
+            </view>
           </view>
-          <view class='info_left_b'>
-            <view class='info_name'>
-              杨小鸣
+          <view class='info_right'>
+            <view class='info_right_a'>
+              <lable>类型：</lable>
+              <lable>{{order.type}} </lable>
+              <lable style='color:#ff6344;font-size:35rpx;'>￥{{order.price}}</lable>
+              <i class='icont_time iconfont icon-shijianzhongbiao'></i>
+              <label class='time_time'>{{order.time}}</label>
+            </view>
+            <view class='info_right_a'>
+              <lable>地址：</lable>
+              <lable>{{order.rough_address}}</lable>
+            </view>
+            <view class='info_right_a'>
+              <lable>时间：</lable>
+              <lable>{{order.hope_time}}</lable>
+              <button class='get_list' id='{{order.id}}' bindtap='get_the_list'>接单</button>
             </view>
           </view>
         </view>
-        <view class='info_right'>
-          <view class='info_right_a'>
-            <lable>类型：</lable>
-            <lable>小件 </lable>
-            <lable>2元</lable>
-            <i class='icont_time iconfont icon-shijianzhongbiao'></i> 
-            <label class='time_time'>7/12/14:05</label>
-          </view>
-          <view class='info_right_a'>
-            <lable>地址：</lable>
-            <lable>软件园4号楼</lable>
-          </view>
-          <view class='info_right_a'>
-            <lable>时间：</lable>
-            <lable>7/12/16:40</lable>
-            <button class='get_list'>接单</button>
-          </view>
-        </view>
-      </view>
+      </block>
     </view>
+
+
     <!-- 专业代取模块 -->
-    <view class='content' style='display:{{display_car_b}}'>
+    <view class='content' style='display:{{display_car}}'>
       111
     </view> 
   </view>
 </view>
-
 

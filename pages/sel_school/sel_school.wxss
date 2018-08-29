@@ -23,40 +23,28 @@
 .the_code_inner{
   width: 100rpx;
 }
-.number_a{
-  position: absolute;
-  font-size: 50rpx;
-}
-.number_b{
-  position: relative;
-  margin-left: 60rpx;
-  width: 88%;
-  height: 60rpx;
-  border-bottom: 1.1px solid #9b9a9a;  
-}
-.inner_b{
-  margin-top: 50rpx;
-}
-.send_code{
-  font-size: 32rpx;
-  position: relative;
-  top: -58rpx; 
-  left: 370rpx; 
-  color: #6b6a6a;
-}
-.send_codes{
-  font-size: 32rpx;
-  position: relative;
-  top: -58rpx; 
-  left: 383rpx; 
-  color: #6b6a6a;
+.the_xiala{
+  float: right;
 }
 .submit{
-  margin-top: 30rpx;
+  margin-top: 80rpx;
 }
 .submit_btn{
   font-size: 14px;
   padding-top: 5rpx;
   height: 80rpx;
   background-color: #f6b26b;
+}
+.inner_a_a{
+  font-size: 36rpx;
+}
+.inner_a_b{
+  font-size: 36rpx;
+  padding-top: 50rpx;
+}
+.inner_a_c{
+  padding-top: 20rpx;
+  font-size: 26rpx;
+  color: #000000;
+  z-index: 100;
 }

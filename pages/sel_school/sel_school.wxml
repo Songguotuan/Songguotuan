@@ -1,0 +1,24 @@
+<!--pages/login/login.wxml-->
+<image src='../../image/sz.png' class='bg_img'></image>
+<view class='page'>
+  <view class='inner'>
+    <view class='logo_name'>学校</view>
+    <view class='inner_a'>
+      <view class="inner_a_a" bindtap='pull_city'>
+        选择省份： {{option_city}}
+        <i class='iconfont icon-xiala1 the_xiala'></i>
+      </view>
+      <view class="inner_a_b" bindtap='pull_school'>
+        选择学校： {{option_school}}
+        <i class='iconfont icon-xiala1 the_xiala'></i>
+      </view>
+      <view class="inner_a_c" bindtap=''>
+        <i class='the_xiala'>仅展示已开通学校</i>
+      </view>
+    </view>
+    <view class='submit'>
+      <button class='submit_btn' hover-start-time='0ms' hover-stay-time='0ms' bindtap='signup' bindgetuserinfo="getUserInfo" open-type="getUserInfo">开启松果</button>
+    </view>
+  </view>
+</view>
+

@@ -1,0 +1,26 @@
+ <!-- 顺风代取模块 -->
+<view class='position'>
+  <view class='position_b'>
+    <view bindtap='accept_ads'>
+      收件点
+      <i class='iconfont icon-xiala'></i>
+    </view>
+  </view>
+  <view class='position_c'>
+    <view bindtap=''>
+      价格
+      <i class='iconfont icon-xiala'></i>    
+    </view> 
+  </view>
+</view>
+
+<view class="the_pull {{open ? 'get_open' : ''}} ">
+  <view class='pull_inner' bindtap="mySelect">
+    <view>全部</view>
+  </view>
+  <block wx:for="{{pull_inner_data}}" wx:for-item="data" wx:key="{{index}}">
+    <view class='pull_inner'>
+      <view>{{data.msg}}</view>
+    </view>
+  </block>
+</view>

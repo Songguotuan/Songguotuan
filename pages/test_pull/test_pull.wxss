@@ -1,0 +1,47 @@
+/* pages/test_pull/test_pull.wxss */
+.position{
+  width: 100%;
+  font-size: 30rpx; 
+  height: 66rpx;
+}
+.position_a{
+  padding-top: 10rpx;
+  padding-left: 50rpx;
+  background-color: #f9f7f7; 
+  float: left;
+  position: relative;
+}
+.position_b{
+   padding-top: 10rpx;
+  padding-left: 125rpx;
+  background-color: #f9f7f7; 
+  float: left;
+  position: relative;
+}
+.position_c{
+  padding-top: 10rpx;
+  padding-left: 130rpx;
+  background-color: #f9f7f7; 
+  float: left;
+  position: relative;
+}
+
+
+.the_pull{
+background-color: white;
+width: 100%;
+z-index: 1;
+}
+
+.pull_inner{
+  font-size: 30rpx;
+  padding: 17rpx 0rpx 17rpx 45rpx; 
+  border-width: 90%;
+  border-bottom: 1.3rpx solid #f9f7f7;
+}
+.get_open{
+  transform: rotate(0deg) scale(1) translate(0%,-150%);  
+}
+.the_pull_price{
+  position: absolute;
+}

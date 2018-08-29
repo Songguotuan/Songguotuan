@@ -14,7 +14,7 @@
       <text class='send_codes' bindtap='getcode'>{{button}}</text>
     </view>
     <view class='submit'>
-      <button class='submit_btn' hover-start-time='0ms' hover-stay-time='0ms' bindtap='signup' bindgetuserinfo="getUserInfo" open-type="getUserInfo">开启松果</button>
+      <button class='submit_btn' hover-start-time='0ms' hover-stay-time='0ms' bindtap='signup' bindgetuserinfo="getUserInfo" open-type="getUserInfo">下一步</button>
     </view>
   </view>
 </view>

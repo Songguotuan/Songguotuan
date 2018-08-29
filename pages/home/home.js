@@ -1,6 +1,10 @@
 // pages/home/home.js
 const app = getApp();
 const that = this;
+var rou;
+var animation_bar_btn = 0;
+const util = require('../../utils/util.js');
+var order_id;
 Page({
 
   /**
@@ -8,23 +12,19 @@ Page({
    */
   data: {
     imgUrls: [],
-      // 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      // 'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      // 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      // 'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      // 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      // 'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      // 'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
     duration: 1000,
-    display_per_a: 'block',
-    display_per_b: 'block',
-    display_car_a: 'none',
-    display_car_b: 'none',
+    display_per: 'block',
+    display_car: 'none',
     mode_per_bgcolor: '#f6b26b',
-    mode_car_bgcolor: '#E9E7E7'
+    mode_car_bgcolor: '#E9E7E7',
+    order_data:'',
+    open: false,
+    actionSheetList:[],
+    hasOrder: false,
+    order_id: ''
   },
   changeIndicatorDots: function (e) {
     this.setData({
@@ -39,40 +39,69 @@ Page({
   // 点击顺风代取，出现per隐藏car
   mode_per_tap: function(){
     this.setData({
-      display_per_a: 'block',
-      display_per_b: 'block',
-      display_car_a: 'none',
-      display_car_b: 'none',
+      display_per: 'block',
+      display_car: 'none',
       mode_per_bgcolor: '#f6b26b',
       mode_car_bgcolor: '#E9E7E7'
     });
   },
   mode_car_tap: function(){
     this.setData({
-      display_per_a: 'none',
-      display_per_b: 'none',
-      display_car_a: 'block',
-      display_car_b: 'block',
+      display_per: 'none',
+      display_car: 'block',
       mode_per_bgcolor: '#E9E7E7',
       mode_car_bgcolor: '#f6b26b'
     })
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    var that = this
+  //下拉出现和隐藏
+  accept_ads: function (e) {
+    //历史订单fetch 
+    var that=this
+    var temp
     var fetch
-    //抓取主页轮播图
+    var school_id = 10058
     wx.request({
-      url: 'https://www.acampus.cn/get_carousel',
+      url: 'https://www.acampus.cn/fetch_pull',
       method: 'POST',
-      success: function (result) {
-        fetch = result.data.msg
-        console.log(fetch)
-        that.setData({
-          imgUrls: fetch
-        })
+      header: {
+        'content-Type': 'application/x-www-form-urlencoded',
+        'Accept': 'application/json'
+      },
+      data: {
+        school_id: school_id,
+      },
+      success: result => {
+        if (result.data.result == 'success') {
+          fetch = result.data.msg
+          that.setData({
+            array: fetch,
+            hasHistoryOrder: true
+          })
+          wx.showActionSheet({
+            itemList: fetch,
+            success: function (res) {
+              console.log(res.tapIndex)
+            },
+            fail: function (res) {
+              console.log(res.errMsg)
+            }
+          })
+        } else if (result.data.msg == 'session已过期') {
+          var temp = wxlogin.wxLoginAgain()
+          wx.showToast({
+            title: '请重试',
+            image: '/image/wrong.png',
+            duration: 3000
+          })
+        } else if (result.data.msg == '无历史订单') {
+          //do nothing
+        } else {
+          wx.showToast({
+            title: result.data.msg,
+            image: '/image/wrong.png',
+            duration: 3000
+          })
+        }
       },
       fail: res => {
         wx.showToast({
@@ -82,6 +111,86 @@ Page({
         })
       }
     })
+  },
+  //接单
+  get_the_list:function(e){
+    order_id = e.currentTarget.id;
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    var that = this
+    var fetch1
+    var fetch2
+    var fetch3
+    var temp
+    var school_id = 10058
+    //查询主页轮播图
+    wx.request({
+      url: 'https://www.acampus.cn/get_carousel',
+      method: 'POST',
+      success: function (result) {
+        fetch2 = result.data.msg
+        console.log(fetch2)
+        that.setData({
+          imgUrls: fetch2
+        })
+      },
+      fail: res => {
+        wx.showToast({
+          title: '网络不好哟',
+          image: '/image/wrong.png',
+          duration: 3000
+        })
+      }
+    }),
+    //查询订单fetch
+    wx.request({
+      url: 'https://www.acampus.cn/fetch_order',
+      method: 'POST',
+      header: {
+        'content-Type': 'application/x-www-form-urlencoded',
+        'Accept': 'application/json'
+      },
+      data: {
+      },
+      success: result => {
+        if (result.data.result == 'success') {
+          fetch2 = result.data.msg
+          console.log(fetch2)
+          that.setData({
+            order_data: fetch2,
+            hasHistoryOrder: true
+          })
+        } else if (result.data.msg == 'session已过期') {
+          var temp = wxlogin.wxLoginAgain()
+          wx.showToast({
+            title: '请重试',
+            image: '/image/wrong.png',
+            duration: 3000
+          })
+
+        } else if (result.data.msg == '无订单') {
+          //do nothing
+        } else {
+          wx.showToast({
+            title: result.data.msg,
+            image: '/image/wrong.png',
+            duration: 3000
+          })
+        }
+      },
+      fail: res => {
+        wx.showToast({
+          title: '网络不好哟',
+          image: '/image/wrong.png',
+          duration: 3000
+        })
+      }
+    })
+  
   },
 
   /**

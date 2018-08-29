@@ -1,12 +1,15 @@
 {
   "pages":[
-    "pages/home/home",    
-    "pages/test/test",
+    "pages/sel_school/sel_school",
     "pages/signup/signup",    
+    "pages/home/home",    
+    "pages/test_pull/test_pull",    
+    "pages/test/test",    
+    "pages/test_bar/test_bar",
+    "pages/my/my",
     "pages/logs/logs",
     "pages/order/order",
-    "pages/chat/chat",
-    "pages/my/my"
+    "pages/chat/chat"
   ],
   "window":{
     "backgroundTextStyle":"light",

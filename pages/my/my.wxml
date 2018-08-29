@@ -1,2 +1,62 @@
 <!--pages/my/my.wxml-->
-<text>pages/my/my.wxml</text>
+<view class='continer'>
+  <view class='top'>
+    <view class='top-left'>
+      <image src='https://wx.qlogo.cn/mmopen/vi_32/auOMOVSZKkTWcxn1S6ic25wBiaibEZqa3yLwe20ibhf7onUqfWYl1jicEOOrDx6H3iaNJUMasX0ric5Jef5jGoP0sIuMg/132' class='headimg'></image>
+    </view>
+    <view class='top-top'>
+      <text class='nicheng'>{{text}}</text>
+    </view>
+    <view class='top-bot'>
+      <text class='guoxin'>果信分良好  ></text>
+    </view>
+    <view class='top-right'>
+      <image class='topimg' src=''></image>
+      <image class='botimg' src=''></image>
+    </view>
+  </view>
+  <view class='bottom'>
+    <view class='bot'>
+      <image src='' class='bot-img'></image> 
+      <text class='bot-text'>我的钱包</text>
+      <text class='youjiantou'>></text>
+      <view class='hengxian'>
+      </view>
+    </view>
+    <view class='bot'>
+      <image src='' class='bot-img'></image> 
+      <text class='bot-text'>松果会员</text>
+      <text class='youjiantou'>></text>
+      <view class='hengxian'>
+      </view>
+    </view>
+    <view class='bot'>
+      <image src='' class='bot-img'></image> 
+      <text class='bot-text'>历史订单</text>
+      <text class='youjiantou'>></text>
+      <view class='hengxian'>
+      </view>
+    </view>
+    <view class='bot'>
+      <image src='' class='bot-img'></image> 
+      <text class='bot-text'>帮助中心</text>
+      <text class='youjiantou'>></text>
+      <view class='hengxian'>
+      </view>
+    </view>
+    <view class='bot'>
+      <image src='' class='bot-img'></image> 
+      <text class='bot-text'>联系客服</text>
+      <text class='youjiantou'>></text>
+      <view class='hengxian'>
+      </view>
+    </view>
+    <view class='bot'>
+      <image src='' class='bot-img'></image> 
+      <text class='bot-text'>成为商家</text>
+      <text class='youjiantou'>></text>
+      <view class='hengxian'>
+      </view>
+    </view>
+  </view>
+</view>
