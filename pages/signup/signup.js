@@ -135,7 +135,7 @@ Page({
                 icon: 'false',
               });
               wx.reLaunch({
-                url: '../home/home'
+                url: '../sel_school/sel_school'
               })
             } else {
               console.log(result.data.msg)

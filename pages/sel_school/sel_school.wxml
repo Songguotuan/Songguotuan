@@ -18,7 +18,7 @@
       </view>
     </view>
     <view class='submit'>
-      <button class='submit_btn' hover-start-time='0ms' hover-stay-time='0ms' bindtap='signup' bindgetuserinfo="getUserInfo" open-type="getUserInfo">开启松果</button>
+      <button class='submit_btn' hover-start-time='0ms' hover-stay-time='0ms' bindtap='signup'>开启松果</button>
     </view>
   </view>
 </view>

@@ -5,6 +5,8 @@ var rou;
 var animation_bar_btn = 0;
 const util = require('../../utils/util.js');
 var order_id;
+var accept_ads_value;
+var fetch2
 Page({
 
   /**
@@ -24,7 +26,8 @@ Page({
     open: false,
     actionSheetList:[],
     hasOrder: false,
-    order_id: ''
+    order_id: '',
+    accept_ads_value:'收件点'
   },
   changeIndicatorDots: function (e) {
     this.setData({
@@ -55,11 +58,12 @@ Page({
   },
   //下拉出现和隐藏
   accept_ads: function (e) {
-    //历史订单fetch 
     var that=this
     var temp
     var fetch
+    // var fetch2    
     var school_id = 10058
+    var index
     wx.request({
       url: 'https://www.acampus.cn/fetch_pull',
       method: 'POST',
@@ -74,13 +78,60 @@ Page({
         if (result.data.result == 'success') {
           fetch = result.data.msg
           that.setData({
-            array: fetch,
-            hasHistoryOrder: true
+            array: fetch
           })
           wx.showActionSheet({
             itemList: fetch,
             success: function (res) {
-              console.log(res.tapIndex)
+              index = res.tapIndex;
+              that.setData({
+                accept_ads_value: fetch[index]
+              })
+
+              //查询订单fetch
+              wx.request({
+                url: 'https://www.acampus.cn/fetch_order_index',
+                method: 'POST',
+                header: {
+                  'content-Type': 'application/x-www-form-urlencoded',
+                  'Accept': 'application/json'
+                },
+                data: {
+                  index:index
+                },
+                success: result => {
+                  if (result.data.result == 'success') {
+                    fetch2 = result.data.msg
+                    console.log(fetch2)
+                    that.setData({
+                      order_data: fetch2
+                    })
+                  } else if (result.data.msg == 'session已过期') {
+                    var temp = wxlogin.wxLoginAgain()
+                    wx.showToast({
+                      title: '请重试',
+                      image: '/image/wrong.png',
+                      duration: 3000
+                    })
+
+                  } else if (result.data.msg == '无订单') {
+                    //do nothing
+                  } else {
+                    wx.showToast({
+                      title: result.data.msg,
+                      image: '/image/wrong.png',
+                      duration: 3000
+                    })
+                  }
+                },
+                fail: res => {
+                  wx.showToast({
+                    title: '网络不好哟',
+                    image: '/image/wrong.png',
+                    duration: 3000
+                  })
+                }
+              })
             },
             fail: function (res) {
               console.log(res.errMsg)
@@ -116,14 +167,17 @@ Page({
   get_the_list:function(e){
     order_id = e.currentTarget.id;
   },
-
+  //价格排序
+  pull_price:function(){
+    console.log(fetch2[0].price)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     var that = this
     var fetch1
-    var fetch2
+    // var fetch2
     var fetch3
     var temp
     var school_id = 10058
@@ -161,8 +215,7 @@ Page({
           fetch2 = result.data.msg
           console.log(fetch2)
           that.setData({
-            order_data: fetch2,
-            hasHistoryOrder: true
+            order_data: fetch2
           })
         } else if (result.data.msg == 'session已过期') {
           var temp = wxlogin.wxLoginAgain()
